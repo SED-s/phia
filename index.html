@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SED's - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+<!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Courier+Prime:wght@400;700&family=Space+Mono:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+   
+<!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2 class="logo">SED</h2>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <div class="home-text">
+            <p>Hello, I'm</p>
+            <h1>Sophia Joy</h1>
+            <h3>Student & Aspiring Web Designer</h3>
+
+            <p class="intro">
+                Welcome to my personal portfolio. Here you can learn more
+                about me, my skills, and some of the projects I have created.
+            </p>
+
+            <a href="#about" class="btn">About Me</a>
+        </div>
+
+        <div class="home-image">
+            <img src="Profile/Profile.png" alt="Profile">
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I am a working student who is interested in technology, designing,
+            and creating simple digital projects. I enjoy learning new
+            skills and improving my knowledge in design and programming while balancing my work and studies.
+        </p>
+    </section>
+
+<section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+            <a href="quizzes.html">
+                <h3>Quizzes</h3>
+                <p>View my quizzes.</p>
+            </a>
+        </div>
+
+        <div class="project-card">
+            <a href="activities.html">
+                <h3>Laboratory</h3>
+                <p>View my laboratory work.</p>
+            </a>
+        </div>
+
+        <div class="project-card">
+            <a href="exams.html">
+                <h3>Exams</h3>
+                <p>View my exams.</p>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <div class="contact-container">
+   
+        <div class="contact-icons">
+
+        <a href="https://www.facebook.com/phiased" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="https://www.instagram.com/_phiaschz" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="mailto:sjsedralin@pcu.edu.ph">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://github.com/SED-s" target="_blank">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>© 2026 Sophia Joy S. Edralin | My Portfolio</p>
+    </footer>
+
+<script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    function updateActiveLink() {
+        let current = "home";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    updateActiveLink();
+</script>
+
+</body>
+</html>
